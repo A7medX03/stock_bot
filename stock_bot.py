@@ -18,6 +18,11 @@ discord.VoiceClient = None
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
+# إنشاء ملف products.json إذا لم يكن موجوداً
+if not os.path.exists('products.json'):
+    with open('products.json', 'w') as f:
+        json.dump({}, f)
+
 # تخزين المنتجات في قاموس
 products = {}
 
